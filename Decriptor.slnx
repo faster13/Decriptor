@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Decriptor/Decriptor.vcxproj" Id="7031c552-ac07-44b8-98c1-8ffe71938460" />
+</Solution>
