@@ -51,6 +51,16 @@ void sample_file() {
 	out_file.close();
 }
 
+void sample_file_2() {
+	std::string wrd = "from fairest creatures we desire increasethat thereby beautys rose might never diebut as the riper should by time deceasehis tender heir might bear his memorybut thou contracted to thine own bright eyesfeedst";
+	std::ofstream out_file("INPUT.txt", std::ios::out, std::ios::trunc);
+	int position = 1;
+	for (int c = 0; c < wrd.length(); c++) {
+		out_file << encode_char(to_num(wrd.at(c)), position++);
+	}
+	out_file.close();
+}
+
 int decode_char(int encoded_char, int position) {
 	int decoded_char;
 	int k = 0;
@@ -68,13 +78,14 @@ int decode_char(int encoded_char, int position) {
 }
 
 int main() {
-	generateInputFile();
+	//generateInputFile();
 	//sample_file();
+	sample_file_2();
 	std::ifstream in_file("INPUT.txt");
 	char ch;
 	std::ofstream out_file("OUTPUT.txt", std::ios::out | std::ios::trunc);
 	int position = 1;
-	while (in_file.get(ch)) { // пока не достигнут конец файла класть очередную строку в переменную (s)
+	while (in_file.get(ch)) {
 		int decoded_char = decode_char((int)ch, position++);
 		if (decoded_char == 27) {
 			decoded_char = 32;
